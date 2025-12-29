@@ -1,0 +1,14 @@
+# secrets
+najemina_api/src/config.php
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# logs
+*.log
+
+# archives
+*.zip
