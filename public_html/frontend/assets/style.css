@@ -1,0 +1,203 @@
+:root {
+    --primary: #4f46e5;
+    --danger: #dc2626;
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ✅ Responsive container: mobile-first, na desktopu širše */
+.app {
+    width: 100%;
+    max-width: 920px;
+    /* na desktopu lepo razširi */
+    margin: 0 auto;
+    padding: 20px 14px 40px;
+    /* več spodaj (mobilno) */
+}
+
+/* ✅ ozka verzija (login “telefon look”) */
+.app.narrow {
+    max-width: 420px;
+}
+
+/* ✅ center layout (login page) */
+.center-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Headings */
+h1 {
+    font-size: 22px;
+    margin: 8px 0 16px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0 0 12px;
+}
+
+h3 {
+    font-size: 15px;
+    margin: 12px 0 8px;
+    color: var(--muted);
+}
+
+/* Cards */
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    /* ✅ varnost: nič ne štrli */
+}
+
+.card.soft {
+    background: #fafafa;
+    box-shadow: none;
+    border: 1px solid #eee;
+}
+
+/* ✅ login card naj bo lepo ozek in centriran */
+.card.login {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Inputs / buttons – “bulletproof” za mobile */
+input,
+button,
+select,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+input {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 10px;
+    font-size: 15px;
+    background: #fff;
+}
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+button {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+}
+
+button.secondary {
+    background: #111827;
+}
+
+button.danger {
+    background: var(--danger);
+}
+
+/* Nav buttons */
+.nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+/* ✅ če imaš button v <a>, naj anchor ne povzroča overflowa */
+.nav a {
+    flex: 1;
+    display: block;
+    text-decoration: none;
+}
+
+.nav a button {
+    width: 100%;
+}
+
+/* Item (tenant/expense row) */
+.item {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.item strong {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.item small {
+    color: var(--muted);
+}
+
+.link-danger {
+    color: var(--danger);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: var(--primary);
+}
+
+/* ✅ Logo – manjši in v formi */
+.logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 6px 0 14px;
+}
+
+.logo {
+    width: 160px;
+    /* manjše */
+    max-width: 65%;
+    height: auto;
+}
+
+/* ✅ Desktop upgrade: 2 stolpca (najemniki / stroški) */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+@media (min-width: 900px) {
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
